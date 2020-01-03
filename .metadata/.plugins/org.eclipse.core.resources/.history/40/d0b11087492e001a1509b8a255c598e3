@@ -1,0 +1,17 @@
+package ie.gmit.sw;
+
+public class Menu {
+	
+	public Menu() {
+		System.out.println("Language Detector - Daniel Gallagher - G00360986");
+		System.out.println("================================================");
+		
+	}
+	
+	public void displayMenu() throws Throwable {
+		String option;
+		System.out.println("=======================MENU=====================");
+		System.out.println("================================================");
+	}
+
+}
