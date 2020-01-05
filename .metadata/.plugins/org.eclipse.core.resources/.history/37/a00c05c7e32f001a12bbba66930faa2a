@@ -24,7 +24,7 @@ public class Runner {
 		
 		try{
 		Database db = new Database();
-		Parser p = new Parser(wili, 3);
+		Parser p = new Parser(wili, 5);
 		System.out.println("Loading Please Wait......");
 		
 		p.setDb(db);

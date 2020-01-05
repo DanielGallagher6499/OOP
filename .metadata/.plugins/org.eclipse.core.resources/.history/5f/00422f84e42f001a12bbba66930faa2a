@@ -70,11 +70,11 @@ public class Parser implements Runnable {
 				if (query.containsKey(kmers)) {
 					freq += query.get(kmers).getFrequency();
 				}
-				
-				LanguageEntry l = new LanguageEntry(kmers, freq);
-				query.put(kmers, l);
 			}
 
+
+			LanguageEntry l = new LanguageEntry(kmers, freq);
+			query.put(kmers, l);
 		}
 
 		Language language = db.getLanguage(query);

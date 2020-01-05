@@ -17,24 +17,22 @@ public class Runner {
 		System.out.println("*            Language Detector!               *");
 		System.out.println("*                                             *");
 		System.out.println("***********************************************");
-		System.out.println("Welcome!");
-		System.out.println("Please follow the following instructions.");
 		System.out.println("Please Enter wili File Location: ");
 		wili = console.next();
 		
 		try{
 		Database db = new Database();
 		Parser p = new Parser(wili, 3);
-		System.out.println("Loading Please Wait......");
+		System.out.println("Loading......");
 		
+		
+		System.out.println("Loading Complete!");
 		p.setDb(db);
 		Thread t = new Thread(p);
 		t.start();
 		t.join();
 		
 		db.resize(300);
-		
-		System.out.println("Loading Completed Successfully!");
 		
 		System.out.println("Please Enter Test File Location: ");
 		query = console.next();

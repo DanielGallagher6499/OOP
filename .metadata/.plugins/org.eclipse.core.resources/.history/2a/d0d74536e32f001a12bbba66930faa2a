@@ -17,8 +17,7 @@ public class Runner {
 		System.out.println("*            Language Detector!               *");
 		System.out.println("*                                             *");
 		System.out.println("***********************************************");
-		System.out.println("Welcome!");
-		System.out.println("Please follow the following instructions.");
+		System.out.println("Welcome! Please follow the following instructions.");
 		System.out.println("Please Enter wili File Location: ");
 		wili = console.next();
 		
