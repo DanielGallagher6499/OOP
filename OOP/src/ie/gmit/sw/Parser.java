@@ -66,17 +66,18 @@ public class Parser implements Runnable {
 			for (int i = 0; i <= queryFile.length() - k; i++) {
 				CharSequence sequenceChar = queryFile.substring(i, i + k);
 				kmers = sequenceChar.hashCode();
+				
+				if (query.containsKey(kmers)) {
+					freq += query.get(kmers).getFrequency();
+				}
 			}
 
-			if (query.containsKey(kmers)) {
-				freq += query.get(kmers).getFrequency();
-			}
 
 			LanguageEntry l = new LanguageEntry(kmers, freq);
 			query.put(kmers, l);
 		}
 
 		Language language = db.getLanguage(query);
-		System.out.println(language);
+		System.out.println("The language detected is: " + language);
 	}
 }

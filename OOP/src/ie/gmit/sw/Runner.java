@@ -12,6 +12,7 @@ public class Runner {
 	public static void main(String[] args) {
 		
 		System.out.println("***********************************************");
+		System.out.println("*                                             *");
 		System.out.println("*  G00360986 - Daniel Gallagher - GMIT        *");
 		System.out.println("*            Language Detector!               *");
 		System.out.println("*                                             *");
@@ -21,7 +22,8 @@ public class Runner {
 		
 		try{
 		Database db = new Database();
-		Parser p = new Parser(wili, 6);
+		Parser p = new Parser(wili, 3);
+		System.out.println("Loading......");
 		
 		p.setDb(db);
 		Thread t = new Thread(p);
@@ -30,7 +32,7 @@ public class Runner {
 		
 		db.resize(300);
 		
-		System.out.println("Please enter the query file: ");
+		System.out.println("Please Enter Test File Location: ");
 		query = console.next();
 		
 		String s = "This is an example of the english language";
