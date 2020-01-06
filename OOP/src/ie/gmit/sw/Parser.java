@@ -7,20 +7,46 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Parser.
+ */
 public class Parser implements Runnable {
+	
+	/** The db. */
 	private Database db = null;
+	
+	/** The file. */
 	private String file;
+	
+	/** The k. */
 	private int k;
 
+
+	/**
+	 * Instantiates a new parser.
+	 *
+	 * @param file the file
+	 * @param k the k
+	 */
 	public Parser(String file, int k) {
 		this.file = file;
 		this.k = k;
 	}
 
+
+	/**
+	 * Sets the db.
+	 *
+	 * @param db the new db
+	 */
 	public void setDb(Database db) {
 		this.db = db;
 	}
 
+	/**
+	 * Run.
+	 */
 	@Override
 	public void run() {
 		try {
@@ -42,6 +68,13 @@ public class Parser implements Runnable {
 		}
 	}
 
+	/**
+	 * Parses the.
+	 *
+	 * @param text the text
+	 * @param lang the lang
+	 * @param ks the ks
+	 */
 	public void parse(String text, String lang, int... ks) {
 		Language l = Language.valueOf(lang);
 
@@ -52,7 +85,18 @@ public class Parser implements Runnable {
 		}
 	}
 
+	/**
+	 * Analyse query.
+	 * 
+	 * Variables at the top of the method.
+	 * Uses a new map to parse the query file.
+	 * Outputs the language it detects at the end.
+	 *
+	 * @param file the file
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 */
 	public void analyseQuery(String file) throws IOException {
+		//Variables
 		int kmers = 0;
 		int freq = 1;
 		String queryFile;
@@ -78,6 +122,6 @@ public class Parser implements Runnable {
 		}
 
 		Language language = db.getLanguage(query);
-		System.out.println("The language detected is: " + language);
+		System.out.println("The language detected is: " + language); //Outputs the language detected
 	}
 }
